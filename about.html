@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте | Зелёная карта Липецкой области</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span class="logo-text">Зелёная карта</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html#map">Карта</a></li>
+                <li><a href="about.html" class="active">О проекте</a></li>
+                <li><a href="all-sites.html">Все места</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Поиск...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="detail-header" style="margin-top: 70px;">
+        <div class="container">
+            <h1 style="color: white;">О проекте</h1>
+            <p style="font-size: 1.2rem;">Электронная карта особо охраняемых природных территорий Липецкой области</p>
+        </div>
+    </section>
+
+    <section class="mission fade-in" style="padding: 60px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div>
+                    <h2 style="text-align: left;">Наша миссия</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Сделать уникальную природу и культурное наследие Липецкой области доступными для каждого. Мы создаём интерактивный путеводитель по заповедным уголкам родного края.</p>
+                    <p style="margin-bottom: 20px;">На карте собраны:</p>
+                    <ul style="list-style: none;">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Заповедники и заказники</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Памятники природы</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Природные парки</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Духовные центры и монастыри</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Исторические усадьбы</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Уникальные геологические объекты</li>
+                    </ul>
+                </div>
+                <div style="background: var(--light-green); border-radius: 20px; padding: 40px; text-align: center;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 5rem; color: var(--primary-green); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--dark-green);">20+ объектов</h3>
+                    <p>на интерактивной карте</p>
+                    <h3 style="color: var(--dark-green); margin-top: 30px;">12 районов</h3>
+                    <p>Липецкой области</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section fade-in">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Сычева Алина</h3>
+                    <p class="team-role">Разработчик</p>
+                    <p>Веб-разработчик, создатель интерфейса и анимаций.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Корчагина Ирина</h3>
+                    <p class="team-role">Разработчик</p>
+                    <p>Веб-разработчик, создатель интерфейса и анимаций.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Кулакова Александра</h3>
+                    <p class="team-role">Поиск информации</p>
+                    <p>Сбор и систематизация данных о достопримечательностях.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Комарова Ульяна</h3>
+                    <p class="team-role">Поиск информации</p>
+                    <p>Сбор и систематизация данных о достопримечательностях.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners fade-in">
+        <div class="container">
+            <h2>Наши партнёры</h2>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <i class="fas fa-university"></i>
+                    <p>Управление экологии Липецкой области</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-tree"></i>
+                    <p>Заповедник "Галичья Гора"</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-landmark"></i>
+                    <p>Областной краеведческий музей</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-hiking"></i>
+                    <p>Туристский центр Липецкой области</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Зелёная карта</h4>
+                    <p>Интерактивный путеводитель по особо охраняемым природным территориям Липецкой области.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index.html#map">Карта</a></li>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="all-sites.html">Все места</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Зелёная карта Липецкой области. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sites-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

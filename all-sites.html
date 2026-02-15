@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все достопримечательности | Зелёная карта</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span class="logo-text">Зелёная карта</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html#map">Карта</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="all-sites.html" class="active">Все места</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Поиск...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="detail-header" style="margin-top: 70px;">
+        <div class="container">
+            <h1 style="color: white;">Все достопримечательности</h1>
+            <p style="font-size: 1.2rem;">20+ уникальных мест Липецкой области</p>
+        </div>
+    </section>
+
+    <section class="sites-catalog fade-in" style="padding: 60px 0;">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="заповедник">Заповедники</button>
+                <button class="filter-btn" data-filter="памятник природы">Памятники природы</button>
+                <button class="filter-btn" data-filter="природный парк">Природные парки</button>
+                <button class="filter-btn" data-filter="духовный центр">Духовные центры</button>
+                <button class="filter-btn" data-filter="усадьба">Усадьбы</button>
+            </div>
+
+            <div id="sites-grid" class="sites-grid">
+                <!-- Заполняется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Зелёная карта</h4>
+                    <p>Интерактивный путеводитель по особо охраняемым природным территориям Липецкой области.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index.html#map">Карта</a></li>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="all-sites.html">Все места</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Зелёная карта Липецкой области. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sites-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('sites-grid');
+            if (grid && typeof sitesDatabase !== 'undefined') {
+                grid.innerHTML = sitesDatabase.map(site => `
+                    <div class="site-card" data-type="${site.type}">
+                        <div class="site-card-image">
+                            <i class="fas fa-image fa-4x"></i>
+                        </div>
+                        <div class="site-card-content">
+                            <span class="site-card-category">${site.category || site.type}</span>
+                            <h3>${site.name}</h3>
+                            <div class="site-card-region"><i class="fas fa-map-marker-alt"></i> ${site.region}</div>
+                            <p class="site-card-description">${site.description.substring(0, 100)}...</p>
+                            <div class="site-card-actions">
+                                <a href="sites/${site.id}.html" class="btn btn-primary">Подробнее</a>
+                                <a href="index.html?site=${site.id}#map" class="btn btn-outline">На карте</a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
