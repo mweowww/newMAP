@@ -815,6 +815,8 @@ h2:hover::after {
     flex: 1 1 250px; /* равная ширина колонок */
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
 .footer-section h4 {
@@ -854,6 +856,8 @@ h2:hover::after {
     text-decoration: none;
     color: white;
     transition: color 0.3s ease, transform 0.3s ease;
+.footer-section ul li {
+    margin-bottom: 15px;
 }
 
 .nav-links-footer li a:hover {
@@ -1269,4 +1273,5 @@ h2:hover::after {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+
 }
