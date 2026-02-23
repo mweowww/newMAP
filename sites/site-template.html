@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Template</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="sites-data.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const siteId = params.get('id'); // Assume 'id' is the URL parameter for the site
+            const siteData = window.sitesData[siteId]; // Access data from sites-data.js
+            
+            if (siteData) {
+                document.title = siteData.title; // Set document title
+                document.getElementById('navbar').innerHTML = siteData.navigation.map(item => `<li>${item}</li>`).join('');
+                document.getElementById('sidebar').innerHTML = siteData.sidebarInfo;
+                
+                const gallery = document.getElementById('gallery');
+                siteData.gallery.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.url;
+                    imgElement.alt = image.alt;
+                    gallery.appendChild(imgElement);
+                });
+                
+                document.getElementById('activities').innerHTML = siteData.activities.map(activity => `<li>${activity}</li>`).join('');
+                document.getElementById('footer').innerHTML = siteData.footer;
+            } else {
+                document.body.innerHTML = "<h1>Site not found</h1>";
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="navbar"></ul>
+        </nav>
+    </header>
+    <aside id="sidebar"></aside>
+    <main>
+        <section id="gallery"></section>
+        <section id="activities"></section>
+    </main>
+    <footer id="footer"></footer>
+</body>
+</html>
